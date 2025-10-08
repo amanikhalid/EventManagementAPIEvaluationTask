@@ -30,6 +30,9 @@ namespace EventManagementAPIEvaluationTask
             builder.Services.AddAutoMapper(typeof(MappingProfile));
             builder.Services.AddScoped<IEventService, EventService>();
 
+            // Register AttendeeService
+            builder.Services.AddScoped<IAttendeeService, AttendeeService>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
