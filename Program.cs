@@ -1,4 +1,4 @@
-using EventManagementAPIEvaluationTask.Data;
+﻿using EventManagementAPIEvaluationTask.Data;
 using EventManagementAPIEvaluationTask.Interfaces;
 using EventManagementAPIEvaluationTask.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -32,6 +32,11 @@ namespace EventManagementAPIEvaluationTask
 
             // Register AttendeeService
             builder.Services.AddScoped<IAttendeeService, AttendeeService>();
+
+            // Register EventReportService and WeatherService
+            builder.Services.AddScoped<IEventReportService, EventReportService>();
+            builder.Services.AddScoped<IWeatherService, WeatherService>();
+            builder.Services.AddHttpClient(); // Register HttpClient for WeatherService
 
             var app = builder.Build();
 
