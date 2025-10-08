@@ -7,6 +7,7 @@ using EventManagementAPIEvaluationTask.Mappings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using EventManagementAPIEvaluationTask.Middlewares;
 
 namespace EventManagementAPIEvaluationTask
 {
@@ -70,6 +71,8 @@ namespace EventManagementAPIEvaluationTask
                 app.UseSwaggerUI();
             }
 
+            app.UseGlobalErrorHandler();
+
             app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseAuthorization();
@@ -77,6 +80,7 @@ namespace EventManagementAPIEvaluationTask
             app.UseAuthorization();
 
             app.MapControllers();
+
 
             app.Run();
         }
