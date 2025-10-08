@@ -4,11 +4,12 @@ using EventManagementAPIEvaluationTask.Repositories;
 using Microsoft.EntityFrameworkCore;
 using EventManagementAPIEvaluationTask.Services;
 using EventManagementAPIEvaluationTask.Mappings;
+using Serilog;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using EventManagementAPIEvaluationTask.Middlewares;
-using Serilog;
+
 
 namespace EventManagementAPIEvaluationTask
 {
@@ -16,7 +17,6 @@ namespace EventManagementAPIEvaluationTask
     {
         public static void Main(string[] args)
         {
-            using Serilog;
 
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console()
@@ -88,9 +88,6 @@ namespace EventManagementAPIEvaluationTask
             app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseAuthorization();
-
-            app.UseAuthorization();
-
             app.MapControllers();
 
 
