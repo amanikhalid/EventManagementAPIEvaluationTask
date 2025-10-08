@@ -32,7 +32,7 @@ namespace EventManagementAPIEvaluationTask.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("EventId")
                         .HasColumnType("int");
@@ -49,9 +49,6 @@ namespace EventManagementAPIEvaluationTask.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("AttendeeId");
-
-                    b.HasIndex("Email")
-                        .IsUnique();
 
                     b.HasIndex("EventId");
 
@@ -94,7 +91,7 @@ namespace EventManagementAPIEvaluationTask.Migrations
                         new
                         {
                             EventId = 1,
-                            Date = new DateTime(2025, 10, 18, 7, 22, 34, 651, DateTimeKind.Utc).AddTicks(6412),
+                            Date = new DateTime(2025, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "AI & Robotics",
                             Location = "Muscat",
                             MaxAttendees = 200,
@@ -103,7 +100,7 @@ namespace EventManagementAPIEvaluationTask.Migrations
                         new
                         {
                             EventId = 2,
-                            Date = new DateTime(2025, 10, 28, 7, 22, 34, 651, DateTimeKind.Utc).AddTicks(7270),
+                            Date = new DateTime(2025, 12, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "New Startups",
                             Location = "Dubai",
                             MaxAttendees = 100,
