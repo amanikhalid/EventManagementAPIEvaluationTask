@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EventManagementAPIEvaluationTask.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class ReportController : ControllerBase
