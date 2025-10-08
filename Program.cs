@@ -71,6 +71,8 @@ namespace EventManagementAPIEvaluationTask
             }
 
             app.UseHttpsRedirection();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseAuthorization();
 
