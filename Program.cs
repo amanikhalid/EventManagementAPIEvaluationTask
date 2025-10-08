@@ -1,5 +1,6 @@
-
 using EventManagementAPIEvaluationTask.Data;
+using EventManagementAPIEvaluationTask.Interfaces;
+using EventManagementAPIEvaluationTask.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace EventManagementAPIEvaluationTask
@@ -11,14 +12,18 @@ namespace EventManagementAPIEvaluationTask
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            // Register DbContext
             builder.Services.AddDbContext<AppDbContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            // Register Repositories (Dependency Injection)
+            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            builder.Services.AddScoped<IEventRepository, EventRepository>();
+            builder.Services.AddScoped<IAttendeeRepository, AttendeeRepository>();
 
             var app = builder.Build();
 
@@ -32,7 +37,6 @@ namespace EventManagementAPIEvaluationTask
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
