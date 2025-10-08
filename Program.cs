@@ -4,6 +4,10 @@ using EventManagementAPIEvaluationTask.Repositories;
 using Microsoft.EntityFrameworkCore;
 using EventManagementAPIEvaluationTask.Services;
 using EventManagementAPIEvaluationTask.Mappings;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
 namespace EventManagementAPIEvaluationTask
 {
     public class Program
