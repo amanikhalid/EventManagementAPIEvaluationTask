@@ -12,6 +12,8 @@ namespace EventManagementAPIEvaluationTask.Mappings
             CreateMap<Event, EventDto>();
             CreateMap<CreateEventDto, Event>();
             CreateMap<Attendee, AttendeeDto>();
+            CreateMap<RegisterAttendeeDto, Attendee>();
+
         }
     }
 }
