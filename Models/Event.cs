@@ -1,7 +1,7 @@
 ﻿using EventManagementAPIEvaluationTask.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace EventManagementAPI.Models
+namespace EventManagementAPIEvaluationTask.Models
 {
     public class Event
     {
