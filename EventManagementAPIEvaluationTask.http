@@ -1,0 +1,6 @@
+@EventManagementAPIEvaluationTask_HostAddress = http://localhost:5072
+
+GET {{EventManagementAPIEvaluationTask_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
