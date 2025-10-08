@@ -2,7 +2,8 @@ using EventManagementAPIEvaluationTask.Data;
 using EventManagementAPIEvaluationTask.Interfaces;
 using EventManagementAPIEvaluationTask.Repositories;
 using Microsoft.EntityFrameworkCore;
-
+using EventManagementAPIEvaluationTask.Services;
+using EventManagementAPIEvaluationTask.Mappings;
 namespace EventManagementAPIEvaluationTask
 {
     public class Program
