@@ -18,15 +18,27 @@ namespace EventManagementAPIEvaluationTask.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Attendee>()
-                .HasIndex(a => a.Email)
-                .IsUnique();
-
-            // Optional: seed sample events here
             modelBuilder.Entity<Event>().HasData(
-                new Event { EventId = 1, Title = "Tech Conference", Description = "AI & Robotics", Date = DateTime.UtcNow.AddDays(10), Location = "Muscat", MaxAttendees = 200 },
-                new Event { EventId = 2, Title = "Startup Pitch", Description = "New Startups", Date = DateTime.UtcNow.AddDays(20), Location = "Dubai", MaxAttendees = 100 }
-            );
+     new Event
+     {
+         EventId = 1,
+         Title = "Tech Conference",
+         Description = "AI & Robotics",
+         Date = new DateTime(2025, 11, 2),
+         Location = "Muscat",
+         MaxAttendees = 200
+     },
+     new Event
+     {
+         EventId = 2,
+         Title = "Startup Pitch",
+         Description = "New Startups",
+         Date = new DateTime(2025, 12, 12),
+         Location = "Dubai",
+         MaxAttendees = 100
+     }
+ );
+
         }
     }
 }
